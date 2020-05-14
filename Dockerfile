@@ -2,8 +2,8 @@ FROM alpine:latest
 
 RUN apk --no-cache add openssl ca-certificates
 
-COPY entry.sh /entry.sh
+COPY sslverify /usr/local/bin/sslverify
 
-RUN chmod +x /entry.sh
+RUN chmod +x /usr/local/bin/sslverify
 
-ENTRYPOINT ["/entry.sh"]
+ENTRYPOINT ["/usr/local/bin/sslverify"]
